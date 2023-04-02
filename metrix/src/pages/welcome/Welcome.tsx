@@ -4,8 +4,11 @@ import Button from '../../components/button/Button'
 import { COLORS } from '../../styles/colors'
 import Slider from '../../components/slider/Slider'
 import { SliderItemInterface } from '../../interfaces/SliderItemInterface'
-import Input from '../../components/input/Input'
-import { TextInput } from 'react-native-paper'
+import { useNavigation } from '@react-navigation/native'
+import { StackNavigationProp } from '@react-navigation/stack'
+import { RootStackParamList } from '../../routes'
+
+type loginScreenProp = StackNavigationProp<RootStackParamList, 'Login'>;
 
 const items: SliderItemInterface[] = [
   {
@@ -27,7 +30,9 @@ const items: SliderItemInterface[] = [
     description: 'Controle seus horários de estudo de acordo com seu tempo livre.'
   }
 ]
+
 export default function Welcome() {
+  const navigation = useNavigation<loginScreenProp>();
   return (
     <View style={styles.container}>
       <View>
@@ -38,7 +43,7 @@ export default function Welcome() {
                 <Button label='Criar conta' type='primary' onPress=""/>
             </View>
             <View style={styles.buttonContainerRight}>
-                <Button label='Logar' type='secondary' onPress=""/>
+                <Button label='Logar' type='secondary' onPress={() => navigation.navigate('Login')}/>
             </View>
         </View>
     </View>
@@ -51,11 +56,10 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.white
   },
   buttonContainer: {
-    backgroundColor: '#ff0000',
     flexDirection: 'row',
     paddingHorizontal: 20,
     position: 'absolute',
-    bottom: 0
+    bottom: 20
   },
   buttonContainerLeft: {
     flex: 1,
