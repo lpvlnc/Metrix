@@ -1,6 +1,7 @@
 import React from 'react'
 import { StyleProp, StyleSheet, Text, TouchableOpacity, ViewStyle } from 'react-native'
 import { COLORS } from '../../styles/colors'
+import { FONTSIZE } from '../../styles/fontSize'
 
 class ButtonProps {
     label: string = ''
@@ -22,7 +23,7 @@ const Button = (props: ButtonProps) => {
     var buttonStyleInfo: ButtonStyleInfo = GetButtonStyleInfo(props.type)
     return (
         <TouchableOpacity style={buttonStyleInfo.style} onPress={props.onPress}>
-            <Text style={{ color: buttonStyleInfo.labelColor, fontSize: 17, fontWeight: '600' }}>{props.label}</Text>
+            <Text style={{ color: buttonStyleInfo.labelColor, fontSize: FONTSIZE.normal, fontWeight: '600' }}>{props.label}</Text>
         </TouchableOpacity>
     )
 }

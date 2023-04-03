@@ -1,5 +1,7 @@
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
+import { COLORS } from '../../styles/colors';
+import { FONTSIZE } from '../../styles/fontSize';
 
 class TitleProps {
     text: string = ''
@@ -15,7 +17,8 @@ export default function Title(props: TitleProps) {
 
 const styles = StyleSheet.create({
     text: {
-        fontSize: 20,
+        fontSize: FONTSIZE.big,
         fontWeight: 'bold',
+        color: COLORS.textPrimary,
     }
   })

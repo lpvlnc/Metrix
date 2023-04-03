@@ -58,7 +58,7 @@ export default SliderPagination;
 const styles = StyleSheet.create({
   container: {
     position: 'absolute',
-    bottom: 0,
+    bottom: 40,
     flexDirection: 'row',
     width: '100%',
     alignItems: 'center',

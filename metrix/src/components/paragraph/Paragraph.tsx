@@ -1,6 +1,7 @@
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import { COLORS } from '../../styles/colors';
+import { FONTSIZE } from '../../styles/fontSize';
 
 class ParagraphProps {
     text: string = ''
@@ -20,7 +21,7 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     text: {
-        fontSize: 16,
+        fontSize: FONTSIZE.small,
         color: COLORS.textSecondary,
         lineHeight: 25.6
     }

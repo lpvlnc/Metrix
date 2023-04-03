@@ -1,4 +1,4 @@
-import { View, StyleSheet } from 'react-native'
+import { View, StyleSheet, Text } from 'react-native'
 import React from 'react'
 import Button from '../../components/button/Button'
 import { COLORS } from '../../styles/colors'
@@ -8,7 +8,7 @@ import { useNavigation } from '@react-navigation/native'
 import { StackNavigationProp } from '@react-navigation/stack'
 import { RootStackParamList } from '../../routes'
 
-type loginScreenProp = StackNavigationProp<RootStackParamList, 'Login'>;
+type welcomeScreenProp = StackNavigationProp<RootStackParamList, 'Login'>;
 
 const items: SliderItemInterface[] = [
   {
@@ -32,7 +32,7 @@ const items: SliderItemInterface[] = [
 ]
 
 export default function Welcome() {
-  const navigation = useNavigation<loginScreenProp>();
+  const navigation = useNavigation<welcomeScreenProp>();
   return (
     <View style={styles.container}>
       <View>
@@ -40,7 +40,7 @@ export default function Welcome() {
       </View>
       <View style={styles.buttonContainer}>
             <View style={styles.buttonContainerLeft}>
-                <Button label='Criar conta' type='primary' onPress=""/>
+                <Button label='Criar conta' type='primary' onPress={() => navigation.navigate('CreateAccount')}/>
             </View>
             <View style={styles.buttonContainerRight}>
                 <Button label='Logar' type='secondary' onPress={() => navigation.navigate('Login')}/>
@@ -53,7 +53,8 @@ export default function Welcome() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: COLORS.white
+    backgroundColor: COLORS.white,
+    paddingTop: 20
   },
   buttonContainer: {
     flexDirection: 'row',

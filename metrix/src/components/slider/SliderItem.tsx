@@ -3,6 +3,7 @@ import React from 'react'
 import Paragraph from '../paragraph/Paragraph'
 import { COLORS } from '../../styles/colors';
 import { SliderItemInterface } from '../../interfaces/SliderItemInterface';
+import Title from '../title/Title';
 
 const { width, height } = Dimensions.get('screen');
 
@@ -14,7 +15,7 @@ const SliderItem = (props: SliderProps) => {
   return (
     <View style={styles.container}>
       <View style={styles.containerTitle}>
-        <Text style={styles.title}>{props.item.title}</Text>
+        <Title text={props.item.title}></Title>
       </View>
       <Image style={styles.image}
           source={props.item.image}
@@ -34,16 +35,10 @@ const styles = StyleSheet.create({
     width,
     height: height / 2,
     alignItems: 'center',
-    paddingTop: 40,
     paddingHorizontal: 20
   },
   containerTitle: {
     paddingBottom: 40
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    color: COLORS.textPrimary,
   },
   image: {
     width: '100%'
