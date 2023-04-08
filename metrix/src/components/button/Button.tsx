@@ -9,57 +9,33 @@ class ButtonProps {
     onPress: any = ''
 }
 
-class ButtonStyleInfo  {
-    labelColor: string = ''
-    style: StyleProp<ViewStyle>
-
-    constructor(labelColor: string, style: StyleProp<ViewStyle>) {
-        this.labelColor = labelColor
-        this.style = style
-    }
-}
-
 const Button = (props: ButtonProps) => {
-    var buttonStyleInfo: ButtonStyleInfo = GetButtonStyleInfo(props.type)
     return (
-        <TouchableOpacity style={buttonStyleInfo.style} onPress={props.onPress}>
-            <Text style={{ color: buttonStyleInfo.labelColor, fontSize: FONTSIZE.normal, fontWeight: '600' }}>{props.label}</Text>
+        <TouchableOpacity 
+            style={[
+                styles.default,
+                {
+                    backgroundColor: props.type == 'primary' ? COLORS.primary : COLORS.white,
+                    borderWidth: props.type == 'tertiary' ? 0 : 1
+                }
+            ]}
+            onPress={props.onPress}>
+            <Text style={{ color: props.type == 'primary' ? COLORS.white : COLORS.primary, fontSize: FONTSIZE.normal, fontWeight: '600' }}>{props.label}</Text>
         </TouchableOpacity>
     )
 }
-function GetButtonStyleInfo(type: string): ButtonStyleInfo {
-    switch(type) {
-        case 'primary':
-            return new ButtonStyleInfo(COLORS.white, styles.primary);
-        case 'secondary':
-            return new ButtonStyleInfo(COLORS.primary, styles.secondary);
-        default:
-            return new ButtonStyleInfo(COLORS.white, styles.primary);
-    }
-}
-
 
 export default Button
 
 const styles = StyleSheet.create({
-    primary: {
-        backgroundColor: COLORS.primary,
+    default: {
         width: '100%',
         height: 60,
         paddingHorizontal: 12,
         justifyContent: 'center',
         alignItems: 'center',
-        borderRadius: 15
-    },
-    secondary: {
-        backgroundColor: COLORS.white,
-        width: '100%',
-        height: 60,
-        paddingHorizontal: 12,
         borderWidth: 1,
+        borderRadius: 15,
         borderColor: COLORS.primary,
-        justifyContent: 'center',
-        alignItems: 'center',
-        borderRadius: 15
     }
 })

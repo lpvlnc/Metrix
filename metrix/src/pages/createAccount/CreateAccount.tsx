@@ -11,7 +11,7 @@ import Input from '../../components/input/Input';
 
 type CreateAccountScreenProp = StackNavigationProp<RootStackParamList, 'CreateAccount'>;
 
-export default function Login() {
+export default function CreateAccount() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [hidePassword, setHidePassword] = useState(true);
@@ -27,7 +27,20 @@ export default function Login() {
         <Title text='Criar conta'></Title>
       </View>
       <View>
-        <Input></Input>
+        <Input 
+          icon='account-circle' 
+          placeholder='E-mail' 
+          autoCapitalize='none'
+          keyboardType='email-address'
+        />
+      </View>
+      <View>
+        <Input 
+          icon='lock' 
+          secureTextEntry 
+          placeholder='Senha' 
+          autoCapitalize='none'
+        />
       </View>
       <View style={styles.checkboxContainer}>
         <Checkbox
@@ -65,10 +78,6 @@ const styles = StyleSheet.create({
   titleContainer: {
     marginBottom: 20
   },
-  TextInput: {
-    backgroundColor: COLORS.secondary,
-    marginBottom: 20,
-  }, 
   checkboxContainer: {
     flexDirection: 'row',
     alignItems: 'center',
