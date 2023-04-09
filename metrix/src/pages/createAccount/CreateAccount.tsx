@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 import React, { useState } from 'react'
 import { TextInput, Checkbox } from 'react-native-paper'
 import { COLORS } from '../../styles/colors';
@@ -8,6 +8,7 @@ import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../routes';
 import Button from '../../components/button/Button';
 import Input from '../../components/input/Input';
+import ButtonBack from '../../components/buttonBack/ButtonBack';
 
 type CreateAccountScreenProp = StackNavigationProp<RootStackParamList, 'CreateAccount'>;
 
@@ -23,12 +24,22 @@ export default function CreateAccount() {
 
   return (
     <View style={styles.container}>
+      <View>
+        <ButtonBack onPress={() => navigation.navigate('Welcome')}></ButtonBack>
+      </View>
       <View style={styles.titleContainer}>
         <Title text='Criar conta'></Title>
       </View>
       <View>
         <Input 
           icon='account-circle' 
+          placeholder='Usuário' 
+          autoCapitalize='none'
+        />
+      </View>
+      <View>
+        <Input 
+          icon='alternate-email' 
           placeholder='E-mail' 
           autoCapitalize='none'
           keyboardType='email-address'
@@ -42,26 +53,35 @@ export default function CreateAccount() {
           autoCapitalize='none'
         />
       </View>
-      <View style={styles.checkboxContainer}>
-        <Checkbox
-          status={checked ? 'checked' : 'unchecked'}
-          onPress={() => {
-            setChecked(!checked);
-          }}
-          theme={{
-            colors: {
-              primary: COLORS.primary
-            }
-          }}
+      <View>
+        <Input 
+          icon='lock' 
+          secureTextEntry 
+          placeholder='Confirmação de senha' 
+          autoCapitalize='none'
         />
-        <Text>Confirmo que li e concordo com os <Text style={styles.link}>Termos e Condições</Text> e com a <Text style={styles.link}>Política de privacidade</Text>.</Text>
       </View>
-      <View style={styles.buttonContainer}>
-        <View style={styles.buttonContainerCreateAccount}>
-            <Button label='Criar conta' type='primary' onPress={() => navigation.navigate('CreateAccount')}/>
+      <View>
+        <Text style={{color: COLORS.textSecondary}}>
+          Ao criar uma conta você confirma que concorda com os
+          <Text style={styles.link}> Termos e Condições</Text> 
+           e com a 
+           <Text style={styles.link}> Política de privacidade</Text>
+        </Text>
+      </View>
+      <View style={styles.bottom}>
+        <View>
+        <Button label='Criar conta' type='primary' onPress={() => navigation.navigate('CreateAccount')}/>
         </View>
-        <View style={styles.buttonContainerLoginWithGoogle}>
-            <Button label='Conectar com Google' type='secondary' onPress={() => navigation.navigate('Login')}/>
+        <View style={styles.loginContainer}>
+          <View>
+            <Text style={{color: COLORS.textSecondary}}>Ainda não possui uma conta? </Text>
+          </View>
+          <View>
+            <TouchableOpacity onPress={() => navigation.navigate('Login')}>
+              <Text style={styles.link}>Fazer login</Text>
+            </TouchableOpacity>
+          </View>
         </View>
       </View>
     </View>
@@ -76,7 +96,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20
   },
   titleContainer: {
-    marginBottom: 20
+    marginVertical: 40
   },
   checkboxContainer: {
     flexDirection: 'row',
@@ -84,16 +104,17 @@ const styles = StyleSheet.create({
     paddingRight: 20,
     paddingVertical: 20,
   },
-  buttonContainer: {
-    flex: 1,
-    width: '100%',
-  },
-  buttonContainerCreateAccount: {
-  },
-  buttonContainerLoginWithGoogle: {
-  },
   link: {
-    color: 'blue',
-    textDecorationLine: 'underline'
+    color: COLORS.primary
+  },
+  loginContainer: {
+    marginTop: 20,
+    flexDirection: 'row',
+    justifyContent: 'center',
+  },
+  bottom: {
+    flex: 1,
+    justifyContent: 'flex-end',
+    marginBottom: 20
   }
 })

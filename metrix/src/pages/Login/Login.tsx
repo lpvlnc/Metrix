@@ -26,16 +26,16 @@ export default function Login() {
   useEffect(() => passwordInput.current?.resetError(), [password])
 
   function login() {
-    if (email == '') {
-      alert('a');
-      emailInput.current?.focusOnError();
-      return;
-    }
-    if (password == '') {
-      alert('a');
-      passwordInput.current?.focusOnError();
-      return;
-    }
+    // if (email == '') {
+    //   alert('a');
+    //   emailInput.current?.focusOnError();
+    //   return;
+    // }
+    // if (password == '') {
+    //   alert('a');
+    //   passwordInput.current?.focusOnError();
+    //   return;
+    // }
   }
 
   return (
@@ -48,7 +48,7 @@ export default function Login() {
       </View>
       <View>
         <Input
-          title='E-mail'
+          // title='E-mail'
           ref={emailInput}
           icon='account-circle' 
           placeholder='seuemail@mail.com' 
@@ -61,7 +61,7 @@ export default function Login() {
       </View>
       <View>
         <Input
-          title='Senha'
+          // title='Senha'
           ref={passwordInput}
           icon='lock' 
           secureTextEntry 
@@ -83,7 +83,7 @@ export default function Login() {
         </View>
         <View style={styles.createAccountContainer}>
           <View>
-            <Text>Ainda não possui uma conta? </Text>
+            <Text style={{color: COLORS.textSecondary}}>Ainda não possui uma conta? </Text>
           </View>
           <View>
             <TouchableOpacity onPress={() => navigation.navigate('CreateAccount')}>
