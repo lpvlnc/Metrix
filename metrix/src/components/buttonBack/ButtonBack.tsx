@@ -10,7 +10,7 @@ class ButtonBackProps {
 const ButtonBack = (props: ButtonBackProps) => {
   return (
     <TouchableOpacity style={styles.container} onPress={props.onPress}>
-         <MaterialIcons
+         <MaterialIcons color={COLORS.primary}
                         name='arrow-back'
                         size={36}/>
     </TouchableOpacity>

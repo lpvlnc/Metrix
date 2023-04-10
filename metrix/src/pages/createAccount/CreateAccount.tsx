@@ -64,9 +64,10 @@ export default function CreateAccount() {
       <View>
         <Text style={{color: COLORS.textSecondary}}>
           Ao criar uma conta você confirma que concorda com os
-          <Text style={styles.link}> Termos e Condições</Text> 
-           e com a 
-           <Text style={styles.link}> Política de privacidade</Text>
+          <Text style={styles.link}> Termos e Condições </Text> 
+          e com a 
+          <Text style={styles.link}> Política de privacidade</Text>
+          .
         </Text>
       </View>
       <View style={styles.bottom}>
