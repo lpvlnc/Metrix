@@ -50,7 +50,7 @@ export default function Login() {
         <Input
           // title='E-mail'
           ref={emailInput}
-          icon='account-circle' 
+          icon='alternate-email' 
           placeholder='seuemail@mail.com' 
           autoCapitalize='none'
           value={email}
