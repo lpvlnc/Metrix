@@ -1,8 +1,8 @@
 import { View, Text, FlatList, Animated } from 'react-native'
 import React, { useRef, useState } from 'react'
 import { SliderItemInterface } from '../../interfaces/SliderItemInterface';
-import SliderItem from './SliderItem';
-import SliderPagination from './SliderPagination';
+import SliderItem from '../SliderItem';
+import SliderPagination from '../SliderPagination';
 
 type SliderProps = {
   items: SliderItemInterface[];

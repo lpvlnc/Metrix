@@ -1,13 +1,13 @@
 import { View, Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native'
 import React, { createRef, useState, useEffect } from 'react'
 import { COLORS } from '../../styles/colors';
-import Title from '../../components/title/Title';
-import Input, { InputHandle } from '../../components/input/Input';
-import Button from '../../components/button/Button';
+import Title from '../../components/Title';
+import Input, { InputHandle } from '../../components/Input';
+import Button from '../../components/Button';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../routes';
 import { useNavigation } from '@react-navigation/native';
-import ButtonBack from '../../components/buttonBack/ButtonBack';
+import ButtonBack from '../../components/ButtonBack';
 
 type LoginScreenProp = StackNavigationProp<RootStackParamList, 'Login'>;
 

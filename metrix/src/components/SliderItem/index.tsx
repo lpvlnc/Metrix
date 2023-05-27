@@ -1,9 +1,9 @@
 import { View, Text, Image, StyleSheet, Dimensions } from 'react-native'
 import React from 'react'
-import Paragraph from '../paragraph/Paragraph'
+import Paragraph from '../Paragraph'
 import { COLORS } from '../../styles/colors';
 import { SliderItemInterface } from '../../interfaces/SliderItemInterface';
-import Title from '../title/Title';
+import Title from '../Title';
 
 const { width, height } = Dimensions.get('screen');
 

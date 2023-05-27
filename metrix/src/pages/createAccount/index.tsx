@@ -2,13 +2,13 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 import React, { useState } from 'react'
 import { TextInput, Checkbox } from 'react-native-paper'
 import { COLORS } from '../../styles/colors';
-import Title from '../../components/title/Title';
+import Title from '../../components/Title';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../routes';
-import Button from '../../components/button/Button';
-import Input from '../../components/input/Input';
-import ButtonBack from '../../components/buttonBack/ButtonBack';
+import Button from '../../components/Button';
+import Input from '../../components/Input';
+import ButtonBack from '../../components/ButtonBack';
 
 type CreateAccountScreenProp = StackNavigationProp<RootStackParamList, 'CreateAccount'>;
 

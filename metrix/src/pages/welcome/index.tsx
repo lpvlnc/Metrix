@@ -1,12 +1,13 @@
 import { View, StyleSheet, Text } from 'react-native'
 import React from 'react'
-import Button from '../../components/button/Button'
+import Button from '../../components/Button'
 import { COLORS } from '../../styles/colors'
-import Slider from '../../components/slider/Slider'
+import Slider from '../../components/Slider'
 import { SliderItemInterface } from '../../interfaces/SliderItemInterface'
 import { useNavigation } from '@react-navigation/native'
 import { StackNavigationProp } from '@react-navigation/stack'
 import { RootStackParamList } from '../../routes'
+import Toast from 'react-native-toast-message'
 
 type welcomeScreenProp = StackNavigationProp<RootStackParamList, 'Login'>;
 
@@ -32,6 +33,13 @@ const items: SliderItemInterface[] = [
 ]
 
 export default function Welcome() {
+  const showToast = () => {
+    Toast.show({
+      type: 'success',
+      text1: 'Hello',
+      text2: 'This is some something 👋'
+    });
+  }
   const navigation = useNavigation<welcomeScreenProp>();
   return (
     <View style={styles.container}>
@@ -39,13 +47,16 @@ export default function Welcome() {
         <Slider items={items}></Slider>
       </View>
       <View style={styles.buttonContainer}>
-            <View style={styles.buttonContainerLeft}>
-                <Button label='Criar conta' type='primary' onPress={() => navigation.navigate('CreateAccount')}/>
-            </View>
-            <View style={styles.buttonContainerRight}>
-                <Button label='Logar' type='secondary' onPress={() => navigation.navigate('Login')}/>
-            </View>
+        <View style={styles.buttonContainerLeft}>
+            <Button label='Criar conta' type='primary' onPress={() => navigation.navigate('CreateAccount')}/>
         </View>
+        <View style={styles.buttonContainerRight}>
+            <Button label='Logar' type='secondary' onPress={() => navigation.navigate('Login')}/>
+        </View>
+      </View>
+      <View>
+        <Button label='Continuar sem conta' type='tertiary' onPress={() => navigation.navigate('Main')}></Button>
+      </View>
     </View>
   )
 }
