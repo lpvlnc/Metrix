@@ -9,21 +9,30 @@ class ButtonBackProps {
 
 const ButtonBack = (props: ButtonBackProps) => {
   return (
-    <TouchableOpacity style={styles.container} onPress={props.onPress}>
+    <View>
+      <TouchableOpacity style={styles.touchable} onPress={props.onPress}>
          <MaterialIcons color={COLORS.primary}
-                        name='arrow-back'
-                        size={36}/>
-    </TouchableOpacity>
+                        name='arrow-back-ios'
+                        size={36}
+                        style={styles.icon}/>
+      </TouchableOpacity>
+    </View>
   )
 }
 
 export default ButtonBack
 
 const styles = StyleSheet.create({
-    container: {
-        backgroundColor: COLORS.secondary,
-        width: 60,
-        borderRadius: 100,
-        padding: 10
-    }
+  touchable: {
+    position: 'relative',
+    backgroundColor: COLORS.secondary,
+    width: 60,
+    height: 60,
+    borderRadius: 100,
+    padding: 10,
+  },
+  icon: {
+    alignItems: 'center',
+    textAlign: 'center',
+  }
 })

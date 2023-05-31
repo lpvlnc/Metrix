@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20
   },
   titleContainer: {
-    marginVertical: 40
+    marginBottom: 40
   },
   checkboxContainer: {
     flexDirection: 'row',

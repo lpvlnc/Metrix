@@ -1,10 +1,11 @@
 import React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 import { COLORS } from '../../styles/colors';
 import { FONTSIZE } from '../../styles/fontSize';
-
+import { MaterialIcons } from '@expo/vector-icons'
 class TitleProps {
     text: string = ''
+    onPressButtonBack?: any;
 }
 
 export default function Title(props: TitleProps) {
@@ -17,8 +18,9 @@ export default function Title(props: TitleProps) {
 
 const styles = StyleSheet.create({
     text: {
-        fontSize: FONTSIZE.big,
+        textAlign: 'center',
+        fontSize: FONTSIZE.giant,
         fontWeight: 'bold',
-        color: COLORS.textPrimary,
+        color: COLORS.primary,
     }
   })

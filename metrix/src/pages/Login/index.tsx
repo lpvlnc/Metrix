@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20
   },
   titleContainer: {
-    marginVertical: 40
+    marginBottom: 40
   },
   forgotPassword: {
     color: COLORS.primary,
