@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
-import { COLORS } from '../../styles/colors';
-import { FONTSIZE } from '../../styles/fontSize';
+import { FONTSIZE } from '../../constants/fontSize';
+import { COLORS } from '../../constants/colors';
 
 class ParagraphProps {
     text: string = ''

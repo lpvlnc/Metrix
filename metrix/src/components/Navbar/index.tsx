@@ -1,7 +1,7 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, View } from 'react-native'
 import React from 'react'
 import NavBarButton from '../NavBarButton'
-import { COLORS } from '../../styles/colors'
+import { COLORS } from '../../constants/colors'
 
 const index = () => {
   return (

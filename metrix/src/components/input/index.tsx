@@ -1,8 +1,8 @@
 import React, { useState, forwardRef, useImperativeHandle, createRef } from 'react'
 import { StyleSheet, View, TextInput, TouchableOpacity, KeyboardTypeOptions, Text } from 'react-native'
-import { COLORS } from '../../styles/colors';
-import { FONTSIZE } from '../../styles/fontSize';
+import { FONTSIZE } from '../../constants/fontSize';
 import { MaterialIcons } from '@expo/vector-icons'
+import { COLORS } from '../../constants/colors';
 
 export type InputHandle = {
   focusOnError(): void;

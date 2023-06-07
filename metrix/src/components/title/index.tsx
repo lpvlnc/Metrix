@@ -1,11 +1,9 @@
 import React from 'react'
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
-import { COLORS } from '../../styles/colors';
-import { FONTSIZE } from '../../styles/fontSize';
-import { MaterialIcons } from '@expo/vector-icons'
+import { View, Text, StyleSheet } from 'react-native'
+import { FONTSIZE } from '../../constants/fontSize';
+import { COLORS } from '../../constants/colors';
 class TitleProps {
     text: string = ''
-    onPressButtonBack?: any;
 }
 
 export default function Title(props: TitleProps) {

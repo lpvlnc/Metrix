@@ -1,4 +1,4 @@
-import { View, Text, FlatList, Animated } from 'react-native'
+import { View, FlatList, Animated } from 'react-native'
 import React, { useRef, useState } from 'react'
 import { SliderItemInterface } from '../../interfaces/SliderItemInterface';
 import SliderItem from '../SliderItem';

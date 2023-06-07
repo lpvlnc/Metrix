@@ -1,7 +1,7 @@
 import React from 'react'
-import { StyleProp, StyleSheet, Text, TouchableOpacity, ViewStyle } from 'react-native'
-import { COLORS } from '../../styles/colors'
-import { FONTSIZE } from '../../styles/fontSize'
+import { StyleSheet, Text, TouchableOpacity } from 'react-native'
+import { FONTSIZE } from '../../constants/fontSize'
+import { COLORS } from '../../constants/colors'
 
 class ButtonProps {
     label: string = ''

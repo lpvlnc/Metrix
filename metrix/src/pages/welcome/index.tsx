@@ -1,13 +1,13 @@
 import { View, StyleSheet, Text } from 'react-native'
 import React from 'react'
 import Button from '../../components/Button'
-import { COLORS } from '../../styles/colors'
 import Slider from '../../components/Slider'
 import { SliderItemInterface } from '../../interfaces/SliderItemInterface'
 import { useNavigation } from '@react-navigation/native'
 import { StackNavigationProp } from '@react-navigation/stack'
 import { RootStackParamList } from '../../routes'
 import Toast from 'react-native-toast-message'
+import { COLORS } from '../../constants/colors'
 
 type welcomeScreenProp = StackNavigationProp<RootStackParamList, 'Login'>;
 

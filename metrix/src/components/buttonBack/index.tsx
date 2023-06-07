@@ -1,7 +1,7 @@
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { StyleSheet, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { MaterialIcons } from '@expo/vector-icons'
-import { COLORS } from '../../styles/colors'
+import { COLORS } from '../../constants/colors'
 
 class ButtonBackProps {
     onPress: any = ''
@@ -34,5 +34,6 @@ const styles = StyleSheet.create({
   icon: {
     alignItems: 'center',
     textAlign: 'center',
+    left: 5.5
   }
 })

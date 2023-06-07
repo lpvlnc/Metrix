@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet, Animated, Dimensions } from 'react-native'
 import React from 'react'
-import { COLORS } from '../../styles/colors'
 import { SliderItemInterface } from '../../interfaces/SliderItemInterface'
+import { COLORS } from '../../constants/colors'
 
 const { width } = Dimensions.get('screen')
 
