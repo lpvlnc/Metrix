@@ -21,6 +21,42 @@ export default function CreateAccount() {
 
   const navigation = useNavigation<CreateAccountScreenProp>();
 
+  function login() {
+    if (!email) {
+      Toast.show({
+        type: 'error',
+        text1: 'Erro',
+        text2: 'O e-mail precisa ser informado.'
+      });
+      emailInput.current?.focusOnError();
+      return;
+    }
+    if (!password) {
+      Toast.show({
+        type: 'error',
+        text1: 'Erro',
+        text2: 'A senha precisa ser informada.'
+      });
+      passwordInput.current?.focusOnError();
+      return;
+    }
+
+    if (email && password) {
+      if (email != 'admin@mail.com' && password != 'admin123') {
+        Toast.show({
+          type: 'error',
+          text1: 'Credenciais inválidas',
+          text2: 'E-mail ou senha incorretos.'
+        });
+        return
+      } else {
+        navigation.navigate('Main');
+        return
+      }
+    }
+    return
+  }
+
   return (
     <View style={styles.container}>
       <View>
@@ -71,11 +107,11 @@ export default function CreateAccount() {
       </View>
       <View style={styles.bottom}>
         <View>
-        <Button label='Criar conta' type='primary' onPress={() => navigation.navigate('CreateAccount')}/>
+        <Button label='Criar conta' type='primary' onPress={() => navigation.navigate('Login')}/>
         </View>
         <View style={styles.loginContainer}>
           <View>
-            <Text style={{color: COLORS.textSecondary}}>Ainda não possui uma conta? </Text>
+            <Text style={{color: COLORS.textSecondary}}>Já possui uma conta? </Text>
           </View>
           <View>
             <TouchableOpacity onPress={() => navigation.navigate('Login')}>

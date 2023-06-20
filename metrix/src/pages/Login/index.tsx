@@ -8,6 +8,7 @@ import { RootStackParamList } from '../../routes';
 import { useNavigation } from '@react-navigation/native';
 import ButtonBack from '../../components/ButtonBack';
 import { COLORS } from '../../constants/colors';
+import Toast from 'react-native-toast-message';
 
 type LoginScreenProp = StackNavigationProp<RootStackParamList, 'Login'>;
 
@@ -25,17 +26,48 @@ export default function Login() {
   useEffect(() => emailInput.current?.resetError(), [email])
   useEffect(() => passwordInput.current?.resetError(), [password])
 
+  const showToast = () => {
+    Toast.show({
+      type: 'error',
+      text1: 'Credenciais inválidas',
+      text2: 'E-mail ou senha incorretos.'
+    });
+  }
+
   function login() {
-    // if (email == '') {
-    //   alert('a');
-    //   emailInput.current?.focusOnError();
-    //   return;
-    // }
-    // if (password == '') {
-    //   alert('a');
-    //   passwordInput.current?.focusOnError();
-    //   return;
-    // }
+    if (!email) {
+      Toast.show({
+        type: 'error',
+        text1: 'Erro',
+        text2: 'O e-mail precisa ser informado.'
+      });
+      emailInput.current?.focusOnError();
+      return;
+    }
+    if (!password) {
+      Toast.show({
+        type: 'error',
+        text1: 'Erro',
+        text2: 'A senha precisa ser informada.'
+      });
+      passwordInput.current?.focusOnError();
+      return;
+    }
+
+    if (email && password) {
+      if (email == 'admin@mail.com' && password == 'admin123') {
+        navigation.navigate('Main');
+        return
+      } else {
+        Toast.show({
+          type: 'error',
+          text1: 'Credenciais inválidas',
+          text2: 'E-mail ou senha incorretos.'
+        });
+        return
+      }
+    }
+    return
   }
 
   return (
