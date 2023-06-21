@@ -8,21 +8,20 @@ import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../routes';
 import { useNavigation } from '@react-navigation/native';
 
-type MenuAlgebraScreenProp = StackNavigationProp<RootStackParamList, 'MenuAlgebra'>;
+type MenuGeometryCircumferenceCircleScreenProp = StackNavigationProp<RootStackParamList, 'MenuGeometryCircumferenceCircle'>;
 
-const MenuAlgebra = () => {
-  const navigation = useNavigation<MenuAlgebraScreenProp>();
+const MenuGeometryCircumferenceCircle = () => {
+  const navigation = useNavigation<MenuGeometryCircumferenceCircleScreenProp>();
   return (
     <View style={styles.container}>
-      <MainContainerTitle title="Álgebra"></MainContainerTitle>
+      <MainContainerTitle title="Circunferência"></MainContainerTitle>
       <View style={styles.contentContainer}>
-        <MenuItem title="Segundo grau" onPress={() => navigation.navigate('MenuSecondDegreeEquations')}/>
       </View>
     </View>
   )
 }
 
-export default MenuAlgebra
+export default MenuGeometryCircumferenceCircle
 
 const styles = StyleSheet.create({
   container: {

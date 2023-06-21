@@ -1,6 +1,5 @@
 import { View, StyleSheet, Text } from 'react-native'
 import React from 'react'
-import Button from '../../components/Button'
 import Slider from '../../components/Slider'
 import { SliderItemInterface } from '../../interfaces/SliderItemInterface'
 import { useNavigation } from '@react-navigation/native'
@@ -8,6 +7,7 @@ import { StackNavigationProp } from '@react-navigation/stack'
 import { RootStackParamList } from '../../routes'
 import Toast from 'react-native-toast-message'
 import { COLORS } from '../../constants/colors'
+import Button from '../../components/Button'
 
 type welcomeScreenProp = StackNavigationProp<RootStackParamList, 'Login'>;
 

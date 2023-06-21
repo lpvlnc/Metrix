@@ -43,9 +43,8 @@ const renderItem = ({ item, index }: any) => {
 const MainContent = () => {
   const navigation = useNavigation<MainScreenProp>();
   const data = [
-    { icon: 'calculate', title: 'Algebra', onPress: () => {navigation.navigate('MenuAlgebra')}},  { icon: 'bar-chart', title: 'Estatística', onPress: () => {} },
-    { icon: 'calculate', title: 'Algebra', onPress: () => {} },  { icon: 'calculate', title: 'Algebra', onPress: () => {} },
-    { icon: 'calculate', title: 'Algebra', onPress: () => {} },  { icon: 'calculate', title: 'Algebra', onPress: () => {} },
+    { icon: 'calculate', title: 'Álgebra', onPress: () => {navigation.navigate('MenuAlgebra')}},  { icon: 'bar-chart', title: 'Estatística', onPress: () => {navigation.navigate('MenuStatistic')} },
+    { icon: 'change-history', title: 'Geometria', onPress: () => {navigation.navigate('MenuGeometry')} }
   ];
   return (
     <FlatList
@@ -71,9 +70,11 @@ const styles = StyleSheet.create({
     margin: 10,
     height: (Dimensions.get('window').width / numColumns) - 50, // approximate a square
     elevation: 2,
+    borderRadius: 15
   },
   itemInvisible: {
-    backgroundColor: 'transparent',
+    backgroundColor: COLORS.white,
+    elevation: 0
   },
   itemText: {
     marginTop: 20,

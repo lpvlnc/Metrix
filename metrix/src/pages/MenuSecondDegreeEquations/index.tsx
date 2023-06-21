@@ -15,8 +15,7 @@ const MenuSecondDegreeEquations = () => {
         <View style={styles.container}>
             <MainContainerTitle title="Segundo grau"></MainContainerTitle>
             <View style={styles.contentContainer}>
-                <MenuItem title="Bhaskara" onPress={() => {navigation.navigate('EquationBhaskara')}}/>
-                <MenuItem title="Fatorar"/>
+                <MenuItem title="Bhaskara" onPress={() => {navigation.navigate('MenuSecondDegreeEquationsBhaskara')}}/>
             </View>
         </View>
     )

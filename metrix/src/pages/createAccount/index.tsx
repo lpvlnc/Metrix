@@ -8,6 +8,7 @@ import Button from '../../components/Button';
 import Input from '../../components/Input';
 import ButtonBack from '../../components/ButtonBack';
 import { COLORS } from '../../constants/colors';
+import Toast from 'react-native-toast-message';
 
 type CreateAccountScreenProp = StackNavigationProp<RootStackParamList, 'CreateAccount'>;
 
@@ -28,7 +29,6 @@ export default function CreateAccount() {
         text1: 'Erro',
         text2: 'O e-mail precisa ser informado.'
       });
-      emailInput.current?.focusOnError();
       return;
     }
     if (!password) {
@@ -37,7 +37,6 @@ export default function CreateAccount() {
         text1: 'Erro',
         text2: 'A senha precisa ser informada.'
       });
-      passwordInput.current?.focusOnError();
       return;
     }
 

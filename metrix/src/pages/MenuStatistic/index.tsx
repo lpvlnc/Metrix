@@ -8,21 +8,21 @@ import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../routes';
 import { useNavigation } from '@react-navigation/native';
 
-type MenuAlgebraScreenProp = StackNavigationProp<RootStackParamList, 'MenuAlgebra'>;
+type MenuStatisticScreenProp = StackNavigationProp<RootStackParamList, 'MenuStatistic'>;
 
-const MenuAlgebra = () => {
-  const navigation = useNavigation<MenuAlgebraScreenProp>();
+const MenuStatistic = () => {
+  const navigation = useNavigation<MenuStatisticScreenProp>();
   return (
     <View style={styles.container}>
       <MainContainerTitle title="Álgebra"></MainContainerTitle>
       <View style={styles.contentContainer}>
-        <MenuItem title="Segundo grau" onPress={() => navigation.navigate('MenuSecondDegreeEquations')}/>
+        <MenuItem title="Média aritimética" onPress={() => navigation.navigate('MenuStatisticArithmeticMean')}/>
       </View>
     </View>
   )
 }
 
-export default MenuAlgebra
+export default MenuStatistic
 
 const styles = StyleSheet.create({
   container: {

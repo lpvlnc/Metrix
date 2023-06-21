@@ -1,6 +1,5 @@
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 import React, { createRef, useState, useEffect } from 'react'
-import Title from '../../components/Title';
 import Input, { InputHandle } from '../../components/Input';
 import Button from '../../components/Button';
 import { StackNavigationProp } from '@react-navigation/stack';
@@ -9,6 +8,7 @@ import { useNavigation } from '@react-navigation/native';
 import ButtonBack from '../../components/ButtonBack';
 import { COLORS } from '../../constants/colors';
 import Toast from 'react-native-toast-message';
+import Title from '../../components/Title';
 
 type LoginScreenProp = StackNavigationProp<RootStackParamList, 'Login'>;
 

@@ -1,28 +1,25 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, View } from 'react-native'
 import React from 'react'
 import { COLORS } from '../../constants/colors'
 import MainContainerTitle from '../../components/MainContainerTitle'
-import MathJax from 'react-native-mathjax';
-import MenuItem from '../../components/MenuItem';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../routes';
 import { useNavigation } from '@react-navigation/native';
 
-type MenuAlgebraScreenProp = StackNavigationProp<RootStackParamList, 'MenuAlgebra'>;
+type MenuGeometryAreaSquareScreenProp = StackNavigationProp<RootStackParamList, 'MenuGeometryAreaSquare'>;
 
-const MenuAlgebra = () => {
-  const navigation = useNavigation<MenuAlgebraScreenProp>();
+const MenuGeometryAreaSquare = () => {
+  const navigation = useNavigation<MenuGeometryAreaSquareScreenProp>();
   return (
     <View style={styles.container}>
-      <MainContainerTitle title="Álgebra"></MainContainerTitle>
+      <MainContainerTitle title="Área do quadrado"></MainContainerTitle>
       <View style={styles.contentContainer}>
-        <MenuItem title="Segundo grau" onPress={() => navigation.navigate('MenuSecondDegreeEquations')}/>
       </View>
     </View>
   )
 }
 
-export default MenuAlgebra
+export default MenuGeometryAreaSquare
 
 const styles = StyleSheet.create({
   container: {

@@ -1,17 +1,21 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import Welcome from '../pages/Welcome'
 import Login from '../pages/Login';
-import CreateAccount from '../pages/CreateAccount';
-import Main from '../pages/MainContent';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { NavigationContainer } from '@react-navigation/native';
-import { View, Text } from 'react-native';
 import Profile from '../pages/Profile';
 import MainContainer from '../pages/MainContainer';
-import Bhaskara from '../pages/MenuAlgebra';
 import MenuAlgebra from '../pages/MenuAlgebra';
 import MenuSecondDegreeEquations from '../pages/MenuSecondDegreeEquations';
-import EquationBhaskara from '../pages/EquationBhaskara';
+import Welcome from '../pages/Welcome';
+import CreateAccount from '../pages/CreateAccount';
+import MenuGeometry from '../pages/MenuGeometry';
+import MenuGeometryArea from '../pages/MenuGeometryArea';
+import MenuGeometryAreaCircle from '../pages/MenuGeometryAreaCircle';
+import MenuGeometryAreaSquare from '../pages/MenuGeometryAreaSquare';
+import MenuGeometryAreaTriangle from '../pages/MenuGeometryAreaTriangle';
+import MenuGeometryCircumferenceCircle from '../pages/MenuGeometryCircumferenceCircle';
+import MenuStatistic from '../pages/MenuStatistic';
+import MenuStatisticArithmeticMean from '../pages/MenuStatisticArithmeticMean';
+import MenuSecondDegreeEquationsBhaskara from '../pages/MenuSecondDegreeEquationsBhaskara';
 
 export type RootStackParamList = {
     Welcome: undefined;
@@ -20,8 +24,16 @@ export type RootStackParamList = {
     Main: undefined;
     Profile: undefined;
     MenuAlgebra: undefined;
+    MenuGeometry: undefined;
+    MenuGeometryArea: undefined;
+    MenuGeometryAreaCircle: undefined;
+    MenuGeometryAreaSquare: undefined;
+    MenuGeometryAreaTriangle: undefined;
+    MenuGeometryCircumferenceCircle: undefined;
     MenuSecondDegreeEquations: undefined;
-    EquationBhaskara: undefined;
+    MenuSecondDegreeEquationsBhaskara: undefined;
+    MenuStatistic: undefined;
+    MenuStatisticArithmeticMean: undefined;
 };
 
 const Stack = createNativeStackNavigator();
@@ -29,7 +41,11 @@ const Tab = createBottomTabNavigator();
 
 export default function Routes() {
     return (
-        <Stack.Navigator>
+        <Stack.Navigator screenOptions={{
+            contentStyle: {
+                backgroundColor: '#FFFFFF'
+            }
+        }}>
             <Stack.Screen
                 name='Welcome'
                 component={Welcome}
@@ -66,8 +82,48 @@ export default function Routes() {
                 options={{ headerShown: false }}
             />
             <Stack.Screen
-                name='EquationBhaskara'
-                component={EquationBhaskara}
+                name='MenuGeometry'
+                component={MenuGeometry}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen
+                name='MenuGeometryArea'
+                component={MenuGeometryArea}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen
+                name='MenuGeometryAreaCircle'
+                component={MenuGeometryAreaCircle}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen
+                name='MenuGeometryAreaSquare'
+                component={MenuGeometryAreaSquare}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen
+                name='MenuGeometryAreaTriangle'
+                component={MenuGeometryAreaTriangle}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen
+                name='MenuGeometryCircumferenceCircle'
+                component={MenuGeometryCircumferenceCircle}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen
+                name='MenuSecondDegreeEquationsBhaskara'
+                component={MenuSecondDegreeEquationsBhaskara}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen
+                name='MenuStatistic'
+                component={MenuStatistic}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen
+                name='MenuStatisticArithmeticMean'
+                component={MenuStatisticArithmeticMean}
                 options={{ headerShown: false }}
             />
         </Stack.Navigator>
