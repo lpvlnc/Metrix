@@ -14,7 +14,7 @@ const MenuStatistic = () => {
   const navigation = useNavigation<MenuStatisticScreenProp>();
   return (
     <View style={styles.container}>
-      <MainContainerTitle title="Álgebra"></MainContainerTitle>
+      <MainContainerTitle title="Estatística"></MainContainerTitle>
       <View style={styles.contentContainer}>
         <MenuItem title="Média aritimética" onPress={() => navigation.navigate('MenuStatisticArithmeticMean')}/>
       </View>

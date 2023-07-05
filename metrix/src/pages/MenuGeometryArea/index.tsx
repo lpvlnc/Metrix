@@ -16,7 +16,7 @@ const MenuGeometryArea = () => {
     <View style={styles.container}>
       <MainContainerTitle title="Área"></MainContainerTitle>
       <View style={styles.contentContainer}>
-        <MenuItem title="Circulo" onPress={() => {navigation.navigate('MenuGeometryAreaCircle')}}/>
+        <MenuItem title="Círculo" onPress={() => {navigation.navigate('MenuGeometryAreaCircle')}}/>
         <MenuItem title="Quadrado" onPress={() => {navigation.navigate('MenuGeometryAreaSquare')}}/>
         <MenuItem title="Triângulo" onPress={() => {navigation.navigate('MenuGeometryAreaTriangle')}}/>
       </View>

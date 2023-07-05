@@ -16,8 +16,8 @@ const MenuGeometry = () => {
     <View style={styles.container}>
       <MainContainerTitle title="Geometria"></MainContainerTitle>
       <View style={styles.contentContainer}>
-        <MenuItem title="Area" onPress={() => {navigation.navigate('MenuGeometryArea')}}/>
-        <MenuItem title="Circunferência" onPress={() => {navigation.navigate('MenuGeometryCircumferenceCircle')}}/>
+        <MenuItem title="Área" onPress={() => {navigation.navigate('MenuGeometryArea')}}/>
+        {/* <MenuItem title="Circunferência" onPress={() => {navigation.navigate('MenuGeometryCircumferenceCircle')}}/> */}
       </View>
     </View>
   )

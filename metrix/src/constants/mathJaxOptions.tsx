@@ -1,4 +1,4 @@
-const MATH_JAX_OPTIONS = {
+export const MATH_JAX_OPTIONS = {
     messageStyle: "none",
     extensions: ["tex2jax.js"],
     jax: ["input/TeX", "output/HTML-CSS"],

@@ -16,6 +16,8 @@ import MenuGeometryCircumferenceCircle from '../pages/MenuGeometryCircumferenceC
 import MenuStatistic from '../pages/MenuStatistic';
 import MenuStatisticArithmeticMean from '../pages/MenuStatisticArithmeticMean';
 import MenuSecondDegreeEquationsBhaskara from '../pages/MenuSecondDegreeEquationsBhaskara';
+import MenuPhysics from '../pages/MenuPhysics';
+import MenuPhysicsUniversalGravitationalConstant from '../pages/MenuPhysicsUniversalGravitationalConstant';
 
 export type RootStackParamList = {
     Welcome: undefined;
@@ -30,6 +32,8 @@ export type RootStackParamList = {
     MenuGeometryAreaSquare: undefined;
     MenuGeometryAreaTriangle: undefined;
     MenuGeometryCircumferenceCircle: undefined;
+    MenuPhysics: undefined;
+    MenuPhysicsUniversalGravitationalConstant: undefined;
     MenuSecondDegreeEquations: undefined;
     MenuSecondDegreeEquationsBhaskara: undefined;
     MenuStatistic: undefined;
@@ -109,6 +113,16 @@ export default function Routes() {
             <Stack.Screen
                 name='MenuGeometryCircumferenceCircle'
                 component={MenuGeometryCircumferenceCircle}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen
+                name='MenuPhysics'
+                component={MenuPhysics}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen
+                name='MenuPhysicsUniversalGravitationalConstant'
+                component={MenuPhysicsUniversalGravitationalConstant}
                 options={{ headerShown: false }}
             />
             <Stack.Screen

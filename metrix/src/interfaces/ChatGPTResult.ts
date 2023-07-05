@@ -1,5 +1,5 @@
 class ChatGPTResult {
-    solved: boolean = false;
-    steps: Array<string> = [];
-    result: string = "";
-  }
+  solved: boolean | undefined = false;
+  steps: Array<string> | undefined = [];
+  result: string | undefined = "";
+}
